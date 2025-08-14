@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Share Tech Mono', monospace; /* Nova fonte futurista */
+    box-sizing: border-box;
+}
+
+/* Importando a fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body {
+    background-image: url(f1.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    color: #00ffc8; /* Cor principal de texto (verde-água néon) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: background-glow 15s infinite alternate; /* Animação sutil de fundo */
+}
+
+@keyframes background-glow {
+    from { box-shadow: inset 0 0 50px #faf8f8; }
+    to { box-shadow: inset 0 0 50px #5b5757; }
+}
+
+.container {
+    background: linear-gradient(145deg, #1a0f3d, #0d0d1a); /* Gradiente no container */
+    width: 90%;
+    max-width: 650px;
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #3c3e3e;
+    box-shadow: 0 0 50px #00ffc880; /* Brilho néon */
+    text-align: center;
+    animation: container-pulse 5s infinite;
+}
+
+@keyframes container-pulse {
+    0% { transform: scale(1); box-shadow: 0 0 50px #f4f8f780; }
+    50% { transform: scale(1.01); box-shadow: 0 0 60px #f5f8f890; }
+    100% { transform: scale(1); box-shadow: 0 0 50px #f5f7f680; }
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 10px #4a4a4a); /* Sombra néon na logo */
+}
+
+#start-screen h1, #quiz-screen h1 {
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ff00ea; /* Título em rosa néon */
+    text-shadow: 0 0 10px #ff00ea;
+}
+
+#start-screen p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+}
+
+#start-btn, #next-btn {
+    background: linear-gradient(45deg, #07f0b6, #0303e8);
+    color: #0d0d1a;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px #989d9c;
+}
+
+#start-btn:hover, #next-btn:hover {
+    background: linear-gradient(45deg, #a902f1, #0630ea);
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px #ff00ea;
+}
+
+#quiz-screen h1 {
+    border-bottom: 2px solid #1e00ff;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    color: #00ffc8;
+    text-shadow: none;
+}
+
+#question {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    text-align: left;
+    color: #f0f0f0;
+}
+
+#answer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    background-color: #1a0f3d;
+    color: #00ffc8;
+    font-weight: 500;
+    width: 100%;
+    border: 2px solid #00ffc8;
+    padding: 18px;
+    text-align: left;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 5px #00ffc8;
+}
+
+.btn:hover:not([disabled]) {
+    background-color: #00ffc81a; /* Efeito de brilho */
+    transform: translateX(8px);
+    border-color: #ff00ea;
+    box-shadow: 0 0 15px #ff00ea;
+    color: #ff00ea;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.btn.correct {
+    background-color: #00cc66; /* Verde néon para correto */
+    color: #0d0d1a;
+    border: 2px solid #00ffc8;
+    box-shadow: 0 0 20px #00ffc8;
+    animation: glow-correct 1s infinite alternate;
+}
+
+@keyframes glow-correct {
+    from { box-shadow: 0 0 20px #00ffc8; }
+    to { box-shadow: 0 0 30px #00ffc8; }
+}
+
+.btn.incorrect {
+    background-color: #ff3333; /* Vermelho néon para incorreto */
+    color: #0d0d1a;
+    border: 2px solid #ff00ea;
+    box-shadow: 0 0 20px #ff00ea;
+    animation: glow-incorrect 1s infinite alternate;
+}
+
+@keyframes glow-incorrect {
+    from { box-shadow: 0 0 20px #ea07e3; }
+    to { box-shadow: 0 0 30px #f703eb; }
+}
+
+#next-btn {
+    display: none;
+    background: linear-gradient(45deg, #e271e2, #1d1dab);
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    width: 200px;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px #f400f4;
+}
+
+#next-btn:hover {
+    background: linear-gradient(45deg, #1e00ff, #00ffc8);
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px #00ffc8;
+}
